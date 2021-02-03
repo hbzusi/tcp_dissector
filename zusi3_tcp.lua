@@ -186,6 +186,7 @@ phys_quantities = {
   [0x00A9] = "Status Leuchtmelder für ZusiDisplay",
   [0x00AA] = "Außenhelligkeit",
   [0x00AB] = "Status Zug-Fahrdaten",
+  [0x00B0] = "Solldruck Hauptluftleitung",
 }
 
 aus_an = {
@@ -433,7 +434,7 @@ tastaturkommandos = {
   [0x79] = "NBUeTest_Down",
   [0x7A] = "NBUeTest_Up",
   [0x7B] = "Bremsprobe_Down",
-  [0x7C] = "Bremsprobe_Down",
+  [0x7C] = "Bremsprobe_Up",
   [0x7D] = "LeistungAus_Down",
   [0x7E] = "LeistungAus_Up",
   [0x7F] = "ETCSQuittieren_Down",
@@ -543,16 +544,16 @@ kombischalterfunktionen = {
   [0x57] = "Fahrpultintern 27",
   [0x58] = "Fahrpultintern 28",
   [0x59] = "Fahrpultintern 29",
-  [0x5A] = "Fahrpultintern 10",
-  [0x5B] = "Fahrpultintern 11",
-  [0x5C] = "Fahrpultintern 12",
-  [0x5D] = "Fahrpultintern 13",
-  [0x5E] = "Fahrpultintern 14",
-  [0x5F] = "Fahrpultintern 15",
-  [0x60] = "Fahrpultintern 16",
-  [0x61] = "Fahrpultintern 17",
-  [0x62] = "Fahrpultintern 18",
-  [0x63] = "Fahrpultintern 19",
+  [0x5A] = "Fahrpultintern 30",
+  [0x5B] = "Fahrpultintern 31",
+  [0x5C] = "Fahrpultintern 32",
+  [0x5D] = "Fahrpultintern 33",
+  [0x5E] = "Fahrpultintern 34",
+  [0x5F] = "Fahrpultintern 35",
+  [0x60] = "Fahrpultintern 36",
+  [0x61] = "Fahrpultintern 37",
+  [0x62] = "Fahrpultintern 38",
+  [0x63] = "Fahrpultintern 39",
   [0x64] = "Fahrpultintern 40",
   [0x65] = "Federspeicher anlegen",
   [0x66] = "Federspeicher null",
@@ -786,6 +787,15 @@ etcs_einstellungen_interaktionen = {
         [0x0005] = { typ = "word", name = "Achslast in kg", },
         [0x0006] = { typ = "string", name = "Zugnummer", },
         [0x0007] = { typ = "string", name = "Tf-Nummer", },
+        [0x0008] = { typ = "cardinal", name = "RBC-Nummer", },
+        [0x0009] = { typ = "string", name = "RBC-Telefonnummer", },
+        [0x000A] = { typ = "cardinal", name = "RBC-ID", },
+        [0x000B] = { typ = "cardinal", name = "RBC-Land", },
+        [0x000C] = { typ = "cardinal", name = "GSM-R-Netz (Radio Network ID)", },
+        [0x000D] = { typ = "Byte", name = "GSM-R-Netz (Quelle)", enum = {
+          [0] = "GSM-R-Netz muss vom Lokführer eingegeben werden",
+          [1] = "GSM-R-Nuetz ist fest im Fahrzeug hinterlegt",
+        }},
       },
     },
     [0x0004] = {
@@ -1296,10 +1306,43 @@ data_format = {
                           [3] = "Hauptsignal",
                           [9] = "Rangiersignal",
                           [14] = "ETCS",
+                          [17] = "Infrastrukturinfo, weitere Info in Parameter",
                         }},
                         [0x0002] = { typ = "single", name = "Geschwindigkeit in m/s (-1: ETCS-Ende)", },
                         [0x0003] = { typ = "single", name = "Abstand in m", },
                         [0x0004] = { typ = "single", name = "Höhenwert in m", },
+                        [0x0005] = { typ = "word", name = "Parameter", enum = { 
+                          [2] = "Stromabnehmer senken",
+                          [4] = "Stromabnehmer heben",
+                          [6] = "Hauptschalter ausschalten",
+                          [8] = "Hauptschalter einschalten",
+                        }},
+                      },
+                    },
+                    [0x0017] = {
+                      name = "ETCS-EL-Auftrag",
+                      attributes = {
+                        [0x0001] = { typ = "byte", name = "Auftrag", enum = {
+                          [1] = "Ankündigung Hauptschalter aus",
+                          [2] = "Hauptschalter aus",
+                          [3] = "Hauptschalter ein",
+                          [8] = "Ankündigung Stromabnehmer senken",
+                          [9] = "Stromabnehmer senken",
+                          [10] = "Stromabnehmer heben",
+                        }},
+                      },
+                    },
+                    [0x0018] = {
+                      name = "ETCS-Funktionsprüfung läuft",
+                      attributes = {
+                        [0x0001] = { typ = "byte", name = "Zustand", enum = {
+                          [0] = "Kein besonderer Zustand",
+                          [1] = "Bremseingriff ETCS",
+                          [2] = "Sonstiger Bremseingriff",
+                          [3] = "Quittierung erwartet",
+                          [4] = "Prüfung erfolgreich",
+                          [5] = "Prüfung nicht erfolgreich",
+                        }},
                       },
                     },
                   },
@@ -1475,7 +1518,7 @@ data_format = {
                   [1] = "Sandet nicht",
                   [2] = "Sandet",
                 }},
-                [0x0007] = { typ = "byte", name = "Bremsprobezustand", enum = {
+                [0x0007] = { typ = "word", name = "Bremsprobezustand", enum = {
                   [0] = "Normalbetrieb",
                   [1] = "Bremsprobemodus aktiv",
                   -- weitere Zustaende, extern aktiviert
@@ -1832,10 +1875,10 @@ function build_tree(buffer, offset, tree, parent_node)
         descr = descr .. string.format(" [%s]", node.name)
       end
 
-      offset = build_tree(buffer, offset, tree:add(buffer(offset - 4 - 2, 6), descr), node)
+      offset = build_tree(buffer, offset, tree:add(buffer(offset - 4,4), descr), node)
     elseif length == 0xffffffff then
       -- Node end
-      tree:set_len(offset - startoffset + 4 + 2)
+      tree:set_len(offset - startoffset)
       return offset
     else
       -- Attribute
@@ -1899,7 +1942,7 @@ function build_tree(buffer, offset, tree, parent_node)
         descr = descr .. string.format(", value: ? = %s", tostring(value:bytes()))
       end
 
-      tree:add(buffer(offset - 4, length + 4), descr)
+      tree:add(buffer(offset, length), descr)
       offset = offset + length
     end
   end
