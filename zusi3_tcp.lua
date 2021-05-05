@@ -699,6 +699,12 @@ indusi_einstellungen = {
       [0] = "Leuchtdrucktaster",
       [1] = "Drehschalter",
     }},
+    [0x0011] = { typ = "byte", name = "Systemstatus", enum = {
+      [0] = "Ausgeschaltet",
+      [1] = "Abgeschaltet",
+      [2] = "Unterdrückt",
+      [3] = "Aktiv",
+    }},
   },
   nodes = {
     [0x0004] = {
@@ -1285,6 +1291,8 @@ data_format = {
                       [18] = "ETCS: Funkausfall",
                       [19] = "ETCS: Balisenstörung",
                       [20] = "ETCS: manueller Levelwechsel",
+                      [27] = "Allgemeine Störung",
+                      [28] = "Stromversorgung fehlt",
                     }},
                     [0x0004] = { typ = "string", name = "Grund der Zwangs- oder Betriebszwangsbremsung als Text", },
                     [0x0009] = { typ = "single", name = "Zielgeschwindigkeit in m/s (<0: dunkel)", },
@@ -1642,8 +1650,23 @@ data_format = {
                     [0x0004] = {
                       name = "Vorhandenes Zugbeeinflussungssystem",
                       attributes = {
-
                         [0x0001] = { typ = "string", name = "Bezeichnung Zugbeeinflussungssystem", },
+                      },
+                    },
+                    [0x001B] = {
+                      name = "Vorhandene Bremsstellung",
+                      attributes = {
+                        [0x0001] = { typ = "byte", name = "Bremsstellung", enum = {
+                          [0] = "keine/undefiniert",
+                          [1] = "G",
+                          [2] = "P",
+                          [3] = "P+Mg",
+                          [4] = "R",
+                          [5] = "R+Mg",
+                          [6] = "Bremse aus",
+                        }},
+                        [0x0002] = { typ = "single", name = "Zugehörige Bremsmasse", },
+                        [0x0003] = { typ = "byte", name = "Bremsstellung wirksam", enum = boolean, },
                       },
                     },
                   },
@@ -1695,6 +1718,30 @@ data_format = {
                     [0x0016] = { typ = "single", name = "Aktive Bremsmasse", },
                     [0x0017] = { typ = "single", name = "Aktive Bremsmasse inkl. dyn. Bremsen", },
                     [0x0018] = { typ = "word", name = "Anzahl Achsen" },
+                    [0x0019] = { typ = "byte", name = "Bauart Batteriehauptschalter", enum = {
+                      [0] = "Drehtaster aus - 0 - ein",
+                      [1] = "Keiner",
+                      [2] = "Hebel",
+                      [3] = "Drucktaster",
+                    }},
+                    [0x001A] = { typ = "byte", name = "Bauart Stromabnehmerwahlschalter", enum = {
+                      [0] = "Keiner",
+                      [1] = "Drehschalter vorne - auto - hinten - beide",
+                      [2] = "Luftabsperrhähne vorne/hinten",
+                    }},
+                    [0x001C] = { typ = "string", name = "Bezeichnung der Bremsbauart", },
+                    [0x001D] = { typ = "data", name = "Grafik mit der Seitenansicht des Fahrzeugs", },
+                    [0x001E] = { typ = "byte", name = "Hauptluftbehälterleitung vorhanden", enum = boolean, },
+                    [0x001F] = { typ = "byte", name = "Fahrzeug-Verbund", enum = {
+                      [0] = "Fahrzeug ist eigenständig",
+                      [1] = "Fahrzeugteil ohne Fahrzeugstatus",
+                      [2] = "Luftabsperrhähne vorne/hinten",
+                    }},
+                    [0x0020] = { typ = "byte", name = "Lokstatus", enum = {
+                      [0] = "Status unbekannt",
+                      [1] = "Lokomotive",
+                      [2] = "Keine Lokomotive",
+                    }},
                   },
                 },
               },
@@ -1939,6 +1986,29 @@ data_format = {
                 [0x0001] = { typ = "single", name = "Neuer Tempomat-Sollwert in m/s", },
               }
             },
+            [0x000B] = {
+              name = "Stromabnehmerwahl setzen",
+              attributes = {
+                [0x0001] = { typ = "word", name = "Nummer des Fahrzeugs im Zugverband", },
+                [0x0002] = { typ = "byte", name = "Stromabnehmerwahl bitweise codiert", },
+                [0x0003] = { typ = "byte", name = "Absperrhähne der Stromabnehmer bitweise codiert", },
+              }
+            },
+            [0x000C] = {
+              name = "Bremsstellung setzen",
+              attributes = {
+                [0x0001] = { typ = "word", name = "Nummer des Fahrzeugs im Zugverband", },
+                [0x0002] = { typ = "byte", name = "Bremsstellung", enum = {
+                      [0] = "keine/undefiniert",
+                      [1] = "G",
+                      [2] = "P",
+                      [3] = "P+Mg",
+                      [4] = "R",
+                      [5] = "R+Mg",
+                      [6] = "Bremse aus",
+                }},
+              }
+            },
           }
         },
         [0x010B] = {
@@ -2001,6 +2071,16 @@ data_format = {
             },
             [0x000D] = {
               name = "Führerstands-Blickpunkt auf Standard",
+            },
+            [0x000E] = {
+              name = "Fahrzeugbilder",
+              attributes = {
+                [0x0001] = { typ = "word", name = "Höhe der Bilder in Pixel", },
+                [0x0002] = { typ = "byte", name = "Darzustellende Seite des Zuges", enum = {
+                  [0] = "In Fahrtrichtung linke Seite",
+                  [1] = "In Fahrtrichtung rechte Seite",
+                }},
+              },
             },
           },
         },
