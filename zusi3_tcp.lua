@@ -675,6 +675,9 @@ brems_stellung = {
     [4] = "R",
     [5] = "R+Mg",
     [6] = "Bremse aus",
+    [7] = "H",
+    [8] = "E",
+    [9] = "E160",
 }
 
 zug_art = {
