@@ -1411,6 +1411,14 @@ data_format = {
                           [5] = "STM werden gefunden",
                         }},
                       },
+                    },
+                    [0x001A] = {
+                      name = "ETCS-Textmeldung",
+                      attributes = {
+                        [0x0001] = { typ = "byte", name = "Grund für Zwangsbremsung", enum = etcs_grund_zwangsbremsung, },
+                        [0x0002] = { typ = "string", name = "Freier Meldungstext", },
+                      }
+                    },
                     [0x001A] = {
                       name = "ETCS-Textmeldung",
                       attributes = {
@@ -1884,7 +1892,7 @@ data_format = {
             [0x0003] = { typ = "byte", name = "Status Ladepause", enum = {
               [0] = "Ende Ladepause (Start der Simulation)",
             }},
-            [0x0004] = { typ = "string", name = "Transfer der Buchfahrplandatei", },
+            [0x0004] = { typ = "string", name = "Transfer der Buchfahrplan-Rohdatei (xml)", },
             [0x0005] = { typ = "byte", name = "Zug wurde neu übernommen", enum = boolean, },
             [0x0006] = { typ = "data", name = "Transfer der Buchfahrplan-Bilddatei", },
             [0x0007] = { typ = "data", name = "Transfer des Buchfahrplans", },
@@ -2016,7 +2024,6 @@ data_format = {
                 }},
               }
             },
-          }
           },
           attributes = {
             [0x000D] = { typ = "data", name = "Transfer des Bremszettels", },
