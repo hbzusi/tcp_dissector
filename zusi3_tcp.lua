@@ -1415,14 +1415,7 @@ data_format = {
                     [0x001A] = {
                       name = "ETCS-Textmeldung",
                       attributes = {
-                        [0x0001] = { typ = "byte", name = "Grund für Zwangsbremsung", enum = etcs_grund_zwangsbremsung, },
-                        [0x0002] = { typ = "string", name = "Freier Meldungstext", },
-                      }
-                    },
-                    [0x001A] = {
-                      name = "ETCS-Textmeldung",
-                      attributes = {
-                        [0x0001] = { typ = "byte", name = "Grund für Zwangsbremsung", enum = etcs_grund_zwangsbremsung, },
+                        [0x0001] = { typ = "word", name = "Grund für Zwangsbremsung", enum = etcs_grund_zwangsbremsung, },
                         [0x0002] = { typ = "string", name = "Freier Meldungstext", },
                       }
                     },
