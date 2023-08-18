@@ -202,7 +202,7 @@ aus_an = {
   [1] = "an",
 }
 
-aus_an_blinkend = {
+aus_an_blinkend_invers = {
   [0] = "aus",
   [1] = "an",
   [2] = "blinkend",
