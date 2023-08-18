@@ -201,13 +201,7 @@ aus_an = {
   [1] = "an",
 }
 
-aus_dauerlicht_blinkend = {
-  [0] = "aus",
-  [1] = "Dauerlicht",
-  [2] = "blinkend",
-}
-
-aus_an_blinkend_invers = {
+aus_an_blinkend = {
   [0] = "aus",
   [1] = "an",
   [2] = "blinkend",
@@ -736,6 +730,17 @@ bremsstellung = {
   [9] = "E160",
 }
 
+normalzustand_abgesperrt = {
+  [0] = "Normalzustand",
+  [1] = "abgesperrt",
+}
+
+absperrung_bremse = {
+  [0] = "Keine Darstellung",
+  [1] = "Ein Hahn",
+  [2] = "Zwei Hähne",
+}
+
 stromsystem = {
   [0] = "Ohne",
   [1] = "Unbestimmt",
@@ -745,6 +750,7 @@ stromsystem = {
   [5] = "1200 V DC Stromschiene Hamburg",
   [6] = "3 kV DC",
   [7] = "750 V DC Stromschiene Berlin",
+  [8] = "Bordsystem (Stromerzeugung im Fahrzeug)",
 }
 
 abgesperrt_offen = {
@@ -1468,9 +1474,26 @@ data_format = {
                     [0x001A] = {
                       name = "ETCS-Textmeldung",
                       attributes = {
-                        [0x0001] = { typ = "word", name = "Grund für Zwangsbremsung", enum = etcs_grund_zwangsbremsung, },
+                        [0x0001] = { typ = "string", name = "Meldungs-ID gemäß ETCS-Spezifikation", },
                         [0x0002] = { typ = "string", name = "Freier Meldungstext", },
-                      }
+                      },
+                    },
+                    [0x001B] = {
+                      name = "ETCS-Shunting-Zustand",
+                      attributes = {
+                        [0x0001] = { typ = "byte", name = "Zustand", enum = {
+                          [0] = "Grundzustand",
+                          [1] = "SH-Anfrage an RBC geschickt",
+                          [2] = "SH-Anfrage zugestimmt",
+                          [3] = "SH-Anfrage abgelehnt",
+                        }},
+                      },
+                    },
+                    [0x001C] = {
+                      name = "ETCS-Balise befahren",
+                      attributes = {
+                        [0x0001] = { typ = "string", name = "Balisenkennung", },
+                      },
                     },
                   },
                 },
@@ -1644,7 +1667,7 @@ data_format = {
                       },
                     },
                     [0x0023] = {
-                      name = "In der Lok vorhandenes Türschließsystem",
+                      name = "Im Fahrzeug vorhandenes Türschließsystem",
                       attributes = {
                         [0x0001] = { typ = "string", name = "Bezeichnung", },
                       },
@@ -1668,7 +1691,7 @@ data_format = {
                       },
                     },
                     [0x0026] = {
-                      name = "Dynamisches Bremssysteme",
+                      name = "Dynamisches Bremssystem",
                       attributes = {
                         [0x0001] = { typ = "byte", name = "Typ", enum = {
                           [0] = "Unbestimmt",
@@ -1781,6 +1804,10 @@ data_format = {
                       [0] = "aus",
                       -- Sonst von 1 beginnend die laufenden Nummer des Türsystems
                     }},
+                    [0x0036] = { typ = "single", name = "Bremskraft Hand-/Feststellbremse", },
+                    [0x0037] = { typ = "int", name = "Haupt-ID der Fahrzeugvariante", },
+                    [0x0038] = { typ = "int", name = "Neben-ID der Fahrzeugvariante", },
+                    [0x0039] = { typ = "string", name = "Name Führerstandsdatei", },
                   },
                 },
               },
@@ -1860,6 +1887,28 @@ data_format = {
               nodes = {
                 [0x0001] = {
                   name = "Fahrzeug",
+                  nodes = {
+                    [0x000A] = {
+                      name = "Antriebssystem",
+                      attributes = {
+                        [0x0001] = { typ = "word", name = "Laufende Nummer des Systems", },
+                        [0x0002] = { typ = "single", name = "Zugkraft [N]", },
+                        [0x0003] = { typ = "single", name = "Motordrehzahl [U/min]", },
+                        [0x0004] = { typ = "byte", name = "Status Motor", enum = {
+                          [0] = "steht",
+                          [1] = "läuft",
+                          [2] = "startet",
+                          [3] = "stellt ab",
+                        }},
+                      },
+                    },
+                    [0x000B] = {
+                      name = "Dynamisches Bremssystem",
+                      attributes = {
+                        [0x0001] = { typ = "word", name = "Laufende Nummer des Systems", },
+                      },
+                    },
+                  },
                   attributes = {
                     [0x0001] = { typ = "single", name = "Bremszylinderdruck 1 in bar", },
                     [0x0002] = { typ = "single", name = "Hauptluftleitungsdruck in bar", },
@@ -2199,6 +2248,9 @@ data_format = {
                   [1] = "In Fahrtrichtung rechte Seite",
                 }},
               },
+            },
+            [0x000F] = {
+              name = "Liste der Fahrplandateien anfordern",
             },
           },
         },
