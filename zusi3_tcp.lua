@@ -194,6 +194,7 @@ phys_quantities = {
   [0x00B1] = "Motorspannung 2",
   [0x00B2] = "Zwangsbremsung",
   [0x00B3] = "Druck Bremszylinder 2",
+  [0x00B4] = "Status Signale",
  }
 
 aus_an = {
@@ -1794,8 +1795,8 @@ data_format = {
                       [0] = "Keine Darstellung",
                       [1] = "Drucktaster",
                      }},
-                    [0x0033] = { typ = "word", name = "Batterienspannung in Volt", },
-                    [0x0034] = { typ = "byte", name = "Batterienspannungsanzeige", enum = {
+                    [0x0033] = { typ = "word", name = "Batteriespannung in Volt", },
+                    [0x0034] = { typ = "byte", name = "Batteriespannungsanzeige", enum = {
                       [0] = "Keine Darstellung",
                       [1] = "Quadratisch",
                       [2] = "Rund",
@@ -1935,28 +1936,18 @@ data_format = {
                       [2] = "Magnet wird bestromt",
                       [4] = "Magnet hebt",
                     }},
-                  },
-                  nodes = {
-                    [0x000A] = { 
-                      name = "Antriebssystem, aktuelle Daten", 
-                      attributes = {
-                        [0x0001] = { typ = "word", name = "Laufende Nummer des Systems" },
-                        [0x0002] = { typ = "single", name = "Zugkraft in N", },
-                        [0x0003] = { typ = "single", name = "Dieselmotordrehzahl in U/min", },
-                        [0x0007] = { typ = "byte", name = "Status Dieselmotor", enum = {
-                          [0] = "Motor steht",
-                          [1] = "Motor läuft",
-                          [2] = "Motor startet",
-                          [3] = "Motor stellt ab",
-                        }},
-                      }
-                    },
-                    [0x000B] = { 
-                      name = "Dynamisches Bremssystem, aktuelle Daten", 
-                      attributes = {
-                        [0x0001] = { typ = "word", name = "Laufende Nummer des Systems" },
-                      }
-                    },
+                  }
+                }
+              }
+            },
+            [0x00B4] = {
+              name = "Status Signale",
+              nodes = {
+                [0x0001] = {
+                  name = "Nächstes Hauptsignal",
+                  attributes = {
+                    [0x0001] = { typ = "single", name = "Abstand in Meter" },
+                    [0x0002] = { typ = "single", name = "Zulässige Geschwindigkeit in m/s" },
                   }
                 }
               }
