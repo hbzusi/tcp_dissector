@@ -15,60 +15,60 @@ zusi3_proto = Proto("zusi3_tcp", "Zusi 3 TCP")
 
 phys_quantities = {
   [0x0000] = "keine Funktion",
-  [0x0001] = "Geschwindigkeit",
-  [0x0002] = "Druck Hauptluftleitung",
-  [0x0003] = "Druck Bremszylinder 1",
-  [0x0004] = "Druck Hauptluftbehälter",
-  [0x0005] = "Luftpresser läuft",
-  [0x0006] = "Luftstrom Fvb",
-  [0x0007] = "Luftstrom Zbv",
-  [0x0008] = "Lüfter an",
-  [0x0009] = "Zugkraft gesamt",
-  [0x000A] = "Zugkraft pro Achse",
-  [0x000B] = "Zugkraft-Soll gesamt",
-  [0x000C] = "Zugkraft-Soll pro Achse",
-  [0x000D] = "Oberstrom",
-  [0x000E] = "Fahrleitungsspannung",
-  [0x000F] = "Motordrehzahl 1",
-  [0x0010] = "Uhrzeit Stunde",
-  [0x0011] = "Uhrzeit Minute",
-  [0x0012] = "Uhrzeit Sekunde",
-  [0x0013] = "Hauptschalter", -- 0: ein, 1: aus, 2 aus mit Sperre nach Oberspannung da, 3: ein mit Traktionssperre nach HS ein
-  [0x0014] = "Trennschütz",
+  [0x0001] = "Geschwindigkeit [m/s]",
+  [0x0002] = "Druck Hauptluftleitung [bar]",
+  [0x0003] = "Druck Bremszylinder I [bar]",
+  [0x0004] = "Druck Hauptluftbehälter [bar]",
+  [0x0005] = "Luftpresser läuft [aus/an]",
+  [0x0006] = "Luftstrom Fvb [-1...0...1]",
+  [0x0007] = "Luftstrom Zbv [-1...0...1]",
+  [0x0008] = "Lüfter an [aus/an]",
+  [0x0009] = "Zugkraft gesamt [N]",
+  [0x000A] = "Zugkraft pro Achse [N]",
+  [0x000B] = "Zugkraft-Soll gesamt [N]",
+  [0x000C] = "Zugkraft-Soll pro Achse [N]",
+  [0x000D] = "Oberstrom [A]",
+  [0x000E] = "Fahrleitungsspannung [V]",
+  [0x000F] = "Motordrehzahl I [1/min]",
+  [0x0010] = "Uhrzeit Stunde [Zeigerposition Analoguhren]",
+  [0x0011] = "Uhrzeit Minute [Zeigerposition Analoguhren]",
+  [0x0012] = "Uhrzeit Sekunde [Zeigerposition Analoguhren]",
+  [0x0013] = "Hauptschalter",
+  [0x0014] = "Trennschütz [aus/an]",
   [0x0015] = "Fahrstufe",
   [0x0016] = "3D-Fenster",
-  [0x0017] = "AFB-Sollgeschwindigkeit",
-  [0x0018] = "Druck Hilfsluftbehälter",
-  [0x0019] = "Zurückgelegter Gesamtweg",
-  [0x001A] = "LM Getriebe",
-  [0x001B] = "LM Schleudern",
-  [0x001C] = "LM Gleiten",
-  [0x001D] = "LM Mg-Bremse",
-  [0x001E] = "LM H-Bremse",
-  [0x001F] = "LM R-Bremse",
-  [0x0020] = "LM Hochabbremsung",
-  [0x0021] = "LM Schnellbremsung",
+  [0x0017] = "AFB-Sollgeschwindigkeit [m/s]",
+  [0x0018] = "Druck Hilfsluftbehälter [bar]",
+  [0x0019] = "Zurückgelegter Gesamtweg [m]",
+  [0x001A] = "LM Getriebe [aus/an]",
+  [0x001B] = "LM Schleudern [aus/an]",
+  [0x001C] = "LM Gleiten [aus/an]",
+  [0x001D] = "LM Mg-Bremse [aus/an]",
+  [0x001E] = "LM H-Bremse [aus/an]",
+  [0x001F] = "LM R-Bremse [aus/an]",
+  [0x0020] = "LM Hochabbremsung [aus/an]",
+  [0x0021] = "LM Schnellbremsung [aus/an]",
   [0x0022] = "Status Notbremsung",
-  [0x0023] = "LM Uhrzeit (digital)",
-  [0x0024] = "LM Drehzahlverstellung",
-  [0x0025] = "LM Fahrtrichtung vor",
-  [0x0026] = "LM Fahrtrichtung zurück",
-  [0x0027] = "LM Fahrtrichtung M",
+  [0x0023] = "LM Uhrzeit (digital) [0=0:00, 1=24:00]",
+  [0x0024] = "LM Drehzahlverstellung [aus/an]",
+  [0x0025] = "LM Fahrtrichtung vor [aus/an]",
+  [0x0026] = "LM Fahrtrichtung zurück [aus/an]",
+  [0x0027] = "LM Fahrtrichtung M [aus/an]",
   [0x0028] = "Hintergrundbild",
-  [0x0029] = "Motordrehmoment 1",
-  [0x002A] = "Motorlast normiert",
-  [0x002B] = "Tunnel",
-  [0x002C] = "Schienenstoß/Weiche",
-  [0x002D] = "Stahlbrücke",
-  [0x002E] = "Steinbrücke",
-  [0x002F] = "x-Koordinate", -- m
-  [0x0030] = "y-Koordinate", -- m
-  [0x0031] = "z-Koordinate", -- m
-  [0x0032] = "UTM-Referenzpunkt x", -- km
-  [0x0033] = "UTM-Referenzpunkt y", -- km
+  [0x0029] = "Motordrehmoment I [Nm]",
+  [0x002A] = "Motorlast normiert [0...1]",
+  [0x002B] = "Tunnel [aus/an]",
+  [0x002C] = "Schienenstoß/Weiche [aus/an]",
+  [0x002D] = "Stahlbrücke [aus/an]",
+  [0x002E] = "Steinbrücke [aus/an]",
+  [0x002F] = "x-Koordinate relativ zu UTM-Referenzpunkt [m]",
+  [0x0030] = "y-Koordinate relativ zu UTM-Referenzpunkt [m]",
+  [0x0031] = "z-Koordinate [m]",
+  [0x0032] = "UTM-Referenzpunkt x [km]",
+  [0x0033] = "UTM-Referenzpunkt y [km]",
   [0x0034] = "UTM-Zone",
   [0x0035] = "UTM-Zone 2",
-  [0x0036] = "AFB an",
+  [0x0036] = "AFB an [aus/an]",
   [0x0037] = "Fahrpultintern 01",
   [0x0038] = "Fahrpultintern 02",
   [0x0039] = "Fahrpultintern 03",
@@ -89,31 +89,31 @@ phys_quantities = {
   [0x0048] = "Fahrpultintern 18",
   [0x0049] = "Fahrpultintern 19",
   [0x004A] = "Fahrpultintern 20",
-  [0x004B] = "Datum", -- 0 = 30.12.1899
-  [0x004C] = "Gleiskrümmung", -- 1000/m
-  [0x004D] = "Streckenhöchstgeschwindigkeit",
-  [0x004E] = "Zugkraftvorschlag Autopilot",
-  [0x004F] = "Beschleunigung x",
-  [0x0050] = "Beschleunigung y",
-  [0x0051] = "Beschleunigung z",
-  [0x0052] = "Drehbeschleunigung x-Achse",
-  [0x0053] = "Drehbeschleunigung y-Achse",
-  [0x0054] = "Drehbeschleunigung z-Achse",
-  [0x0055] = "Stromabnehmer", -- 1. 4 bit: SA=oben, 2. SA hebt sich gerade
-  [0x0056] = "LM Federspeicherbremse",
-  [0x0057] = "Zustand Federspeicherbremse", -- -1 nicht vorhanden, 0 aus, 1 an, 2 blinkend
-  [0x0058] = "Steuerwagen: LM Getriebe",
-  [0x0059] = "Steuerwagen: LM Schleudern",
-  [0x005A] = "Steuerwagen: LM Gleiten",
-  [0x005B] = "Steuerwagen: LM H-Bremse",
-  [0x005C] = "Steuerwagen: LM R-Bremse",
-  [0x005D] = "Steuerwagen: LM Drehzahlverstellung",
-  [0x005E] = "Druck Zeitbehälter",
-  [0x005F] = "Geschwindigkeit (absolut)",
-  [0x0060] = "Zug ist entgleist",
-  [0x0061] = "Kilometrierung (Zugspitze)",
-  [0x0062] = "Motorstrom 1",
-  [0x0063] = "Motorspannung 1",
+  [0x004B] = "Datum [Tage mit 0 = 30.12.1899]",
+  [0x004C] = "Gleiskrümmung [1000/m]",
+  [0x004D] = "Streckenhöchstgeschwindigkeit [m/s]",
+  [0x004E] = "Zugkraftvorschlag Autopilot [N]",
+  [0x004F] = "Beschleunigung x [m/s²]",
+  [0x0050] = "Beschleunigung y [m/s²]",
+  [0x0051] = "Beschleunigung z [m/s²]",
+  [0x0052] = "Drehbeschleunigung x-Achse [rad/s²]",
+  [0x0053] = "Drehbeschleunigung y-Achse [rad/s²]",
+  [0x0054] = "Drehbeschleunigung z-Achse [rad/s²]",
+  [0x0055] = "Stromabnehmer [bitweise kodiert]",
+  [0x0056] = "LM Federspeicherbremse angelegt [aus/an]",
+  [0x0057] = "Zustand Federspeicherbremse",
+  [0x0058] = "Steuerwagen: LM Getriebe [aus/an]",
+  [0x0059] = "Steuerwagen: LM Schleudern [aus/an]",
+  [0x005A] = "Steuerwagen: LM Gleiten [aus/an]",
+  [0x005B] = "Steuerwagen: LM H-Bremse [aus/an]",
+  [0x005C] = "Steuerwagen: LM R-Bremse [aus/an]",
+  [0x005D] = "Steuerwagen: LM Drehzahlverstellung [aus/an]",
+  [0x005E] = "Druck Zeitbehälter [bar]",
+  [0x005F] = "Geschwindigkeit (absolut) [m/s]",
+  [0x0060] = "Zug ist entgleist [aus/ein]",
+  [0x0061] = "Kilometrierung (Zugspitze) [km]",
+  [0x0062] = "Motorstrom I [A]",
+  [0x0063] = "Motorspannung I [V]",
   [0x0064] = "Status Sifa",
   [0x0065] = "Status Zugbeeinflussung",
   [0x0066] = "Status Türen",
@@ -137,32 +137,32 @@ phys_quantities = {
   [0x0078] = "Fahrpultintern 38",
   [0x0079] = "Fahrpultintern 39",
   [0x007A] = "Fahrpultintern 40",
-  [0x007B] = "Steuerwagen: Lüfter an",
-  [0x007C] = "Steuerwagen: Zugkraft gesamt",
-  [0x007D] = "Steuerwagen: Zugkraft pro Achse",
-  [0x007E] = "Steuerwagen: Zugkraft-Soll gesamt",
-  [0x007F] = "Steuerwagen: Zugkraft-Soll pro Achse",
-  [0x0080] = "Steuerwagen: Oberstrom",
-  [0x0081] = "Steuerwagen: Fahrleitungsspannung",
-  [0x0082] = "Steuerwagen: Motordrehzahl 1",
-  [0x0083] = "Steuerwagen: Hauptschalter", -- 0: ein, 1: aus, 2 aus mit Sperre nach Oberspannung da, 3: ein mit Traktionssperre nach HS ein
-  [0x0084] = "Steuerwagen: Trennschütz",
+  [0x007B] = "Steuerwagen: Lüfter an [aus/an]",
+  [0x007C] = "Steuerwagen: Zugkraft gesamt [N]",
+  [0x007D] = "Steuerwagen: Zugkraft pro Achse [N]",
+  [0x007E] = "Steuerwagen: Zugkraft-Soll gesamt [N]",
+  [0x007F] = "Steuerwagen: Zugkraft-Soll pro Achse [N]",
+  [0x0080] = "Steuerwagen: Oberstrom [A]",
+  [0x0081] = "Steuerwagen: Fahrleitungsspannung [V]",
+  [0x0082] = "Steuerwagen: Motordrehzahl I [1/min]",
+  [0x0083] = "Steuerwagen: Hauptschalter",
+  [0x0084] = "Steuerwagen: Trennschütz [aus/an]",
   [0x0085] = "Steuerwagen: Fahrstufe",
-  [0x0086] = "Steuerwagen: Motordrehmoment 1",
-  [0x0087] = "Steuerwagen: Motorlast normiert",
-  [0x0088] = "Steuerwagen: Stromabnehmer",
-  [0x0089] = "Steuerwagen: Motorstrom 1",
-  [0x008A] = "Steuerwagen: Motorspannung 1",
-  [0x008B] = "Geschwindigkeit (absolut) inkl. Schleudern",
-  [0x008C] = "Batteriehauptschalter aus",
+  [0x0086] = "Steuerwagen: Motordrehmoment I [Nm]",
+  [0x0087] = "Steuerwagen: Motorlast normiert [0...1]",
+  [0x0088] = "Steuerwagen: Stromabnehmer [bitweise kodiert]",
+  [0x0089] = "Steuerwagen: Motorstrom I [A]",
+  [0x008A] = "Steuerwagen: Motorspannung I [V]",
+  [0x008B] = "Geschwindigkeit (absolut) inkl. Schleudern [m/s]",
+  [0x008C] = "Batteriehauptschalter aus [aus=1/an=0]",
   [0x008D] = "Status Fahrzeug",
   [0x008E] = "Status Zugverband",
-  [0x008F] = "Bremsprobefunktion",
-  [0x0090] = "Zug- und Brems-Gesamtkraftsoll normiert", -- 0..1 normiert auf aktuelle Fmax
-  [0x0091] = "Steuerwagen: Zug- und Brems-Gesamtkraftsoll normiert", -- 0..1 normiert auf aktuelle Fmax
+  [0x008F] = "Bremsprobefunktion [0: aus, >0 aktiv]",
+  [0x0090] = "Zug- und Brems-Gesamtkraftsoll normiert [0..1]",
+  [0x0091] = "Steuerwagen: Zug- und Brems-Gesamtkraftsoll normiert [0..1]",
   [0x0092] = "Status Weichen",
-  [0x0093] = "Zug- und Brems-Gesamtkraftsoll absolut normiert", -- 0..1 normiert auf aktuelle Anfahrzugkraft
-  [0x0094] = "Steuerwagen: Zug- und Brems-Gesamtkraftsoll absolut normiert", -- 0..1 normiert auf aktuelle Anfahrzugkraft
+  [0x0093] = "Zug- und Brems-Gesamtkraftsoll absolut normiert [0..1]",
+  [0x0094] = "Steuerwagen: Zug- und Brems-Gesamtkraftsoll absolut normiert [0..1]",
   [0x0095] = "Fahrzeugintern 01",
   [0x0096] = "Fahrzeugintern 02",
   [0x0097] = "Fahrzeugintern 03",
@@ -184,33 +184,33 @@ phys_quantities = {
   [0x00A7] = "Fahrzeugintern 19",
   [0x00A8] = "Fahrzeugintern 20",
   [0x00A9] = "Status Leuchtmelder für ZusiDisplay",
-  [0x00AA] = "Außenhelligkeit",
+  [0x00AA] = "Außenhelligkeit [0..1]",
   [0x00AB] = "Status Zug-Fahrdaten",
-  [0x00AC] = "Führerstand deaktiviert",
-  [0x00AD] = "Solldruck Hauptluftleitung",
-  [0x00AE] = "Motordrehzahl 2",
-  [0x00AF] = "Motordrehmoment 2",
-  [0x00B0] = "Motorstrom 2",
-  [0x00B1] = "Motorspannung 2",
-  [0x00B2] = "Zwangsbremsung",
-  [0x00B3] = "Druck Bremszylinder 2",
+  [0x00AC] = "Führerstand deaktiviert [aus/an]",
+  [0x00AD] = "Solldruck Hauptluftleitung [bar]",
+  [0x00AE] = "Motordrehzahl II [1/min]",
+  [0x00AF] = "Motordrehmoment II [Nm]",
+  [0x00B0] = "Motorstrom II [A]",
+  [0x00B1] = "Motorspannung II [V]",
+  [0x00B2] = "Zwangsbremsung [aus/an]",
+  [0x00B3] = "Druck Bremszylinder II [bar]",
   [0x00B4] = "Status Signale",
-  [0x00B5] = "Drehwinkel x-Achse",
-  [0x00B6] = "Drehwinkel y-Achse",
-  [0x00B7] = "Drehwinkel z-Achse",
- }
+  [0x00B5] = "Drehwinkel x-Achse [rad]",
+  [0x00B6] = "Drehwinkel y-Achse [rad]",
+  [0x00B7] = "Drehwinkel z-Achse [rad]",
+}
 
 aus_an = {
   [0] = "aus",
   [1] = "an",
 }
 
-aus_an_blinkend_invers = {
+aus_an_blinkend = {
   [0] = "aus",
   [1] = "an",
   [2] = "blinkend",
-  [3] = "blinkend invers", -- gegenläufig blinkend
-  [4] = "aus erzwingen"
+  [3] = "gegenläufig blinkend",
+  [4] = "aus erzwingen",
 }
 
 boolean = {
@@ -459,6 +459,10 @@ tastaturkommandos = {
   [0x8A] = "AntriebsaktivierungAuf_Up",
   [0x8B] = "AntriebsaktivierungAb_Down",
   [0x8C] = "AntriebsaktivierungAb_Up",
+  [0x8D] = "LokbremseLoesen_Down",
+  [0x8E] = "LokbremseLoesen_Up",
+  [0x8F] = "SandAutoAus_Down",
+  [0x90] = "SandAutoAus_Up",
 }
 
 tastaturaktionen = {
@@ -612,6 +616,16 @@ kombischalterfunktionen = {
   [0x87] = "AntriebsUmschaltung",
 }
 
+etcs_baseline = {
+  [0] = "Unbeschränkte Kompatibilität",
+  [1] = "Display hat kein ETCS",
+  [2] = "2.2.2",
+  [3] = "2.3.0d",
+  [4] = "3.4.0",
+  [5] = "3.6.0",
+  [6] = "4.0.0",
+}
+
 grund_zwangsbremsung = {
   [0] = "keine Zwangsbremsung",
   [1] = "Wachsam",
@@ -732,6 +746,7 @@ bremsstellung = {
   [7] = "H",
   [8] = "E",
   [9] = "E160",
+  [10] = "R rot",
 }
 
 normalzustand_abgesperrt = {
@@ -762,6 +777,16 @@ abgesperrt_offen = {
   [2] = "offen",
 }
 
+tuerzustand = {
+  [0] = "zu",
+  [1] = "öffnend",
+  [2] = "offen",
+  [3] = "Fahrgastwechsel abgeschlossen",
+  [4] = "schließend",
+  [5] = "gestört",
+  [6] = "blockiert",
+}
+
 eingeleitet_quittiert = {
   [1] = "eingeleitet",
   [2] = "quittiert/Dunkelschaltung",
@@ -788,16 +813,6 @@ zugart = {
   [5] = "S-Bahn-Modus",
 }
 
-tueren_status = {
-  [0] = "zu",
-  [1] = "öffnend",
-  [2] = "offen",
-  [3] = "Fahrgastwechsel abgeschlossen",
-  [4] = "schließend",
-  [5] = "gestört",
-  [6] = "blockiert",
-}
-
 bremse_absperrung = {
   [0] = "Keine Darstellung",
   [1] = "Ein Hahn",
@@ -816,6 +831,33 @@ absperrhaehne_status = {
 bremse_zustand = {
   [1] = "Normalzustand",
   [2] = "abgesperrt"
+}
+
+traktionssperre = {
+  [0] = "Nichts",
+  [1] = "Federspeicher",
+  [2] = "Türsystem",
+  [3] = "Bremsprobe",
+  [4] = "Sifa-Hauptschalter",
+  [5] = "Fahrschalter verlegt beim Aufschließen",
+  [6] = "Richtungsschalter verlegt beim Aufschließen",
+  [7] = "Kein Antrieb verfügbar",
+  [8] = "Keine Richtung eingelegt",
+  [9] = "vMax-Überschreitung",
+  [10] = "Betriebsbremsung wegen vMax-Überschreitung",
+  [11] = "Fahrschalter beim Verlegen nicht quittiert",
+  [12] = "Abschaltung Tempomat/AFB",
+  [13] = "Sifa-Zwangsbremsung",
+  [14] = "Dynamische Bremse aktiv",
+  [15] = "HBL-Druck zu niedrig",
+  [16] = "HL-Druck zu niedrig",
+  [17] = "Nicht ausreichendes Bremsvermögen",
+  [18] = "Mg-Bremse aktiv",
+  [19] = "Zylinderdruck zu hoch",
+  [20] = "Notaus betätigt",
+  [21] = "Hauptschalter nicht eingeschaltet",
+  [22] = "Keine Oberspannung",
+  [23] = "Nullstellungszwang",
 }
 
 indusi_einstellungen = {
@@ -931,12 +973,7 @@ etcs_einstellungen_interaktionen = {
     [0x000F] = { typ = "byte", name = "Zug wurde neu übernommen", enum = boolean, },
     [0x0010] = { typ = "byte", name = "Info-Ton nötig", enum = boolean, },
     [0x0011] = { typ = "byte", name = "Funktionsprüfung", enum = funktionspruefung },
-    [0x0012] = { typ = "string", name = "Maximal verfügbare Baseline des EVC", 
-      -- „oo“ (für unbeschränkte Kompatibilität)
-      -- „.2.2.2“
-      -- „2.3.0d“
-      -- „3.6.0“
-    },
+    [0x0012] = { typ = "byte", name = "Baseline des EVC", enum = etcs_baseline, },
     [0x0013] = { typ = "byte", name = "Fahrzeug hat ETCS-LSS", enum = boolean, },
     [0x0014] = { typ = "byte", name = "Fahrzeug hat Passivschalter", enum = boolean, },
     [0x0015] = { typ = "byte", name = "Fahrzeug hat ETCS-Reset-Schalter", enum = boolean, },
@@ -1089,7 +1126,6 @@ data_format = {
         },
       },
     },
-
     [0x0002] = {
       name = "Client-Anwendung 02 (Fahrpult)",
       nodes = {
@@ -1147,8 +1183,8 @@ data_format = {
                   [0] = "Normalbetrieb",
                   [1] = "Testmodus aktiv",
                 }},
-                [0x0006] = { typ = "byte", name = "Melder „System bereit“", enum = aus_an_blinkend_invers },
-                [0x0007] = { typ = "byte", name = "Melder „Notbremsung“", enum = aus_an_blinkend_invers },
+                [0x0006] = { typ = "byte", name = "Melder „System bereit“", enum = aus_an_blinkend,},
+                [0x0007] = { typ = "byte", name = "Melder „Notbremsung“", enum = aus_an_blinkend, },
               },
             },
             [0x0064] = {
@@ -1263,6 +1299,7 @@ data_format = {
                         [0x0003] = { name = "B ist an, Ü ist aus", },
                         [0x0004] = { name = "Zwangsbremsung aktiv", },
                         [0x0005] = { name = "Quittierung erwartet", },
+                        [0x0006] = { name = "Zwischenschritt", },
                       },
                     },
                   },
@@ -1284,8 +1321,8 @@ data_format = {
                     [0x0008] = { typ = "byte", name = "Zugartmelder O", enum = aus_an, },
                     [0x0009] = { typ = "byte", name = "Indusi-Hupe", enum = {
                       [0] = "aus",
-                      [1] = "Hupe",
-                      [2] = "Zwangsbremsung",
+                      [1] = "Zwangsbremsung",
+                      [2] = "Hupe",
                     }},
                     [0x000A] = { typ = "byte", name = "Melder 500Hz", enum = aus_an },
                     [0x000B] = { typ = "byte", name = "Melder Befehl", enum = aus_an },
@@ -1319,8 +1356,8 @@ data_format = {
                     [0x0021] = { typ = "single", name = "Sollgeschwindigkeit [m/s]", },
                     [0x0022] = { typ = "single", name = "Zielgeschwindigkeit [m/s] (Wert<0 → dunkel)", },
                     [0x0023] = { typ = "single", name = "Zielweg in m (Wert<0 → dunkel)", },
-                    [0x0024] = { typ = "byte", name = "Melder G", enum = aus_an_blinkend_invers },
-                    [0x0025] = { typ = "byte", name = "Melder Prüf/Stör", enum = aus_an_blinkend_invers },
+                    [0x0024] = { typ = "byte", name = "Melder G", enum = aus_an_blinkend },
+                    [0x0025] = { typ = "byte", name = "Melder Prüf/Stör", enum = aus_an_blinkend },
                     [0x0026] = { typ = "byte", name = "CIR-ELKE-Modus", enum = {
                       [0] = "Normaler Modus aktiv",
                       [1] = "CIR-ELKE-Modus aktiv",
@@ -1335,23 +1372,23 @@ data_format = {
                     [0x002C] = { typ = "byte", name = "1000-Hz-Beeinflussung erfolgt", enum = boolean, },
                     [0x002D] = { typ = "byte", name = "500-Hz-Beeinflussung erfolgt", enum = boolean, },
                     [0x002E] = { typ = "byte", name = "2000-Hz-Beeinflussung erfolgt", enum = boolean, },
-                    [0x002F] = { typ = "byte", name = "Melder 1000 Hz", enum = aus_an_blinkend_invers, },
-                    [0x0030] = { typ = "byte", name = "Melder Zugart O", enum = aus_an_blinkend_invers, },
-                    [0x0031] = { typ = "byte", name = "Melder Zugart M", enum = aus_an_blinkend_invers, },
-                    [0x0032] = { typ = "byte", name = "Melder Zugart U", enum = aus_an_blinkend_invers, },
-                    [0x0033] = { typ = "byte", name = "Melder 500 Hz", enum = aus_an_blinkend_invers, },
-                    [0x0034] = { typ = "byte", name = "Melder Befehl", enum = aus_an_blinkend_invers, },
-                    [0x0035] = { typ = "byte", name = "Melder Zugart Rechts", enum = aus_an_blinkend_invers, },
-                    [0x0036] = { typ = "byte", name = "Melder Zugart 65", enum = aus_an_blinkend_invers, },
-                    [0x0037] = { typ = "byte", name = "Melder Zugart Links", enum = aus_an_blinkend_invers, },
-                    [0x0038] = { typ = "byte", name = "Melder H", enum = aus_an_blinkend_invers, },
-                    [0x0039] = { typ = "byte", name = "Melder E40", enum = aus_an_blinkend_invers, },
-                    [0x003A] = { typ = "byte", name = "Melder Ende", enum = aus_an_blinkend_invers, },
-                    [0x003B] = { typ = "byte", name = "Melder B", enum = aus_an_blinkend_invers, },
-                    [0x003C] = { typ = "byte", name = "Melder Ü", enum = aus_an_blinkend_invers, },
-                    [0x003D] = { typ = "byte", name = "Melder EL", enum = aus_an_blinkend_invers, },
-                    [0x003E] = { typ = "byte", name = "Melder V40", enum = aus_an_blinkend_invers, },
-                    [0x003F] = { typ = "byte", name = "Melder S", enum = aus_an_blinkend_invers, },
+                    [0x002F] = { typ = "byte", name = "Melder 1000 Hz", enum = aus_an_blinkend, },
+                    [0x0030] = { typ = "byte", name = "Melder Zugart O", enum = aus_an_blinkend, },
+                    [0x0031] = { typ = "byte", name = "Melder Zugart M", enum = aus_an_blinkend, },
+                    [0x0032] = { typ = "byte", name = "Melder Zugart U", enum = aus_an_blinkend, },
+                    [0x0033] = { typ = "byte", name = "Melder 500 Hz", enum = aus_an_blinkend, },
+                    [0x0034] = { typ = "byte", name = "Melder Befehl", enum = aus_an_blinkend, },
+                    [0x0035] = { typ = "byte", name = "Melder Zugart Rechts", enum = aus_an_blinkend, },
+                    [0x0036] = { typ = "byte", name = "Melder Zugart 65", enum = aus_an_blinkend, },
+                    [0x0037] = { typ = "byte", name = "Melder Zugart Links", enum = aus_an_blinkend, },
+                    [0x0038] = { typ = "byte", name = "Melder H", enum = aus_an_blinkend, },
+                    [0x0039] = { typ = "byte", name = "Melder E40", enum = aus_an_blinkend, },
+                    [0x003A] = { typ = "byte", name = "Melder Ende", enum = aus_an_blinkend, },
+                    [0x003B] = { typ = "byte", name = "Melder B", enum = aus_an_blinkend, },
+                    [0x003C] = { typ = "byte", name = "Melder Ü", enum = aus_an_blinkend, },
+                    [0x003D] = { typ = "byte", name = "Melder EL", enum = aus_an_blinkend, },
+                    [0x003E] = { typ = "byte", name = "Melder V40", enum = aus_an_blinkend, },
+                    [0x003F] = { typ = "byte", name = "Melder S", enum = aus_an_blinkend, },
                   }
                 },
                 [0x0004] = etcs_einstellungen_interaktionen,
@@ -1363,7 +1400,7 @@ data_format = {
                     [0x0003] = { typ = "word", name = "Grund der Zwangs- oder Betriebszwangsbremsung", enum = etcs_grund_zwangsbremsung },
                     [0x0004] = { typ = "string", name = "Grund der Zwangs- oder Betriebszwangsbremsung als Text", },
                     [0x0009] = { typ = "single", name = "Zielgeschwindigkeit [m/s] (<0: dunkel)", },
-                    [0x000A] = { typ = "single", name = "Zielweg in m (<0: dunkel)", },
+                    [0x000A] = { typ = "single", name = "Zielweg [m] (<0: dunkel)", },
                     [0x000B] = { typ = "single", name = "Abstand Bremseinsatzpunkt [m]", },
                     [0x000C] = { typ = "single", name = "Entlassungsgeschwindigkeit [m/s]", },
                     [0x000D] = { typ = "single", name = "Sollgeschwindigkeit [m/s]", },
@@ -1378,13 +1415,17 @@ data_format = {
                       [3] = "TAF quittiert",
                       [4] = "TAF abgelehnt",
                     }},
-                    [0x0014] = { typ = "byte", name = "Override aktiv", enum = boolean },
+                    [0x0014] = { typ = "byte", name = "Override aktiv", enum = {
+                      [1] = "Override aktiv",
+                      [2] = "Override verdeckt aktiv",
+                    }},
                     [0x0015] = { typ = "byte", name = "Nothalt-Status", enum = {
                       [0] = "kein Nothalt",
                       [1] = "bedingter Nothalt aktiv",
                       [2] = "unbedingter Nothalt aktiv",
                     }},
                     [0x0016] = { typ = "word", name = "Betriebszwangsbremsung", enum = etcs_grund_zwangsbremsung },
+                    [0x001D] = { typ = "byte", name = "ETCS-Baseline der Strecke", enum = etcs_baseline, },
                   },
                   nodes = {
                     [0x0005] = {
@@ -1432,7 +1473,7 @@ data_format = {
                           [14] = "ETCS",
                           [17] = "Infrastrukturinfo",
                         }},
-                        [0x0002] = { typ = "single", name = "Geschwindigkeit in m/s (-1: ETCS-Ende)", },
+                        [0x0002] = { typ = "single", name = "Geschwindigkeit [m/s] (-1: ETCS-Ende)", },
                         [0x0003] = { typ = "single", name = "Abstand [m]", },
                         [0x0004] = { typ = "single", name = "Höhenwert [m]", },
                         [0x0005] = { typ = "word", name = "Parameter", enum = {
@@ -1440,7 +1481,12 @@ data_format = {
                           [4] = "Stromabnehmer heben",
                           [6] = "Hauptschalter aus",
                           [8] = "Hauptschalter ein",
+                          [10] = "Anfang NBÜ-Abschnitt",
+                          [100] = "Neigung",
+                          [101] = "Ende NBÜ-Abschnitt",
+                          [102] = "Richtungsanzeiger",
                         }},
+                        [0x0006] = { typ = "single", name = "Neigung [‰]", },
                       },
                     },
                     [0x0017] = {
@@ -1484,15 +1530,13 @@ data_format = {
                     [0x001A] = {
                       name = "ETCS-Textmeldung",
                       attributes = {
-                        [0x0001] = { typ = "cardinal", name = "Meldungs-ID gemäß ETCS-Spezifikation", },
-                        [0x0002] = { typ = "double", name = "Zeitstempel der Meldung", },
-                        [0x0003] = { typ = "word", name = "Zusi-eigene Kennung des Meldungstypen", enum = {
-                          [0] = "Individuelle Meldung",
-                        }},
-                        [0x0004] = { typ = "string", name = "Kennung des Meldungstypen gemäß ETCS-Spezifikation", },
+                        [0x0001] = { typ = "cardinal", name = "Laufende ID", },
+                        [0x0002] = { typ = "double", name = "Zeitstempel", },
+                        [0x0003] = { typ = "word", name = "Meldungstyp (Zusi-intern, 0=individuell)", },
+                        [0x0004] = { typ = "string", name = "Meldungstyp gemäß ETCS-Spezifikation", },
                         [0x0005] = { typ = "string", name = "Meldungstext", },
-                        [0x0006] = { typ = "string", name = "Fülltext bei Meldungen mit Parameter", },
-                        [0x0007] = { typ = "byte", name = "Quittierungspflichtige Meldung", enum = boolean },
+                        [0x0006] = { typ = "string", name = "Parameterwert", },
+                        [0x0007] = { typ = "byte", name = "Quittierpflichtige Meldung", enum = boolean },
                       },
                     },
                     [0x001B] = {
@@ -1510,6 +1554,16 @@ data_format = {
                       name = "ETCS-Balise befahren",
                       attributes = {
                         [0x0001] = { typ = "string", name = "Balisenkennung", },
+                      },
+                    },
+                    [0x001E] = {
+                      name = "ETCS-NBÜ-Abschnitt",
+                      attributes = {
+                        [0x0001] = { typ = "byte", name = "NBÜ-Abschnitt-Typ", enum = {
+                          [0] = "NBÜ-Abschnitt außerhalb Bremskurve",
+                          [1] = "Ankündigung NBÜ-Abschnitt",
+                          [2] = "NBÜ-Abschnitt",
+                        }},
                       },
                     },
                   },
@@ -1533,9 +1587,9 @@ data_format = {
                     [0x0004] = { typ = "byte", name = "Melder GNT S", enum = aus_an, },
                     [0x0005] = { typ = "byte", name = "Melder GNT Gst ein", enum = aus_an, },
                     [0x0006] = { typ = "byte", name = "Melder GNT Gst Stör", enum = aus_an, },
-                    [0x0007] = { typ = "byte", name = "Status Melder GNT Ü", enum = aus_an_blinkend_invers, },
-                    [0x0008] = { typ = "byte", name = "Status Melder GNT G", enum = aus_an_blinkend_invers, },
-                    [0x0009] = { typ = "byte", name = "Status Melder GNT S", enum = aus_an_blinkend_invers, },
+                    [0x0008] = { typ = "byte", name = "Status Melder GNT G", enum = aus_an_blinkend, },
+                    [0x0009] = { typ = "byte", name = "Status Melder GNT S", enum = aus_an_blinkend, },
+                    [0x0007] = { typ = "byte", name = "Status Melder GNT Ü", enum = aus_an_blinkend, },
                     [0x000A] = { typ = "word", name = "Zwangsbremsung", enum = grund_zwangsbremsung, },
                     [0x000B] = { typ = "byte", name = "Betriebszwangsbremsung aktiv", },
                   },
@@ -1548,11 +1602,11 @@ data_format = {
                     [0x0002] = { typ = "word", name = "Grund der Zwangsbremsung", enum = zbs_grund_zwangsbremsung, },
                     [0x0004] = { typ = "word", name = "Betriebszwangsbremsung", enum = zbs_grund_zwangsbremsung,},
                     [0x0005] = { typ = "byte", name = "Melder Ü", enum = aus_an, },
-                    [0x0006] = { typ = "byte", name = "Melder G", enum = aus_an_blinkend_invers, },
+                    [0x0006] = { typ = "byte", name = "Melder G", enum = aus_an_blinkend, },
                     [0x0007] = { typ = "byte", name = "Melder S", enum = aus_an, },
-                    [0x0008] = { typ = "byte", name = "Melder A", enum = aus_an_blinkend_invers, },
-                    [0x0009] = { typ = "single", name = "Zielgeschwindigkeit in m/s (<0: dunkel)", },
-                    [0x000A] = { typ = "single", name = "Freigabegeschwindigkeit in m/s (<0: dunkel)", },
+                    [0x0008] = { typ = "byte", name = "Melder A", enum = aus_an_blinkend, },
+                    [0x0009] = { typ = "single", name = "Zielgeschwindigkeit [m/s] (<0: dunkel)", },
+                    [0x000A] = { typ = "single", name = "Freigabegeschwindigkeit [m/s] (<0: dunkel)", },
                     [0x000B] = { typ = "byte", name = "Befehlsfahrt aktiv", enum = boolean, },
                   },
                   nodes = {
@@ -1574,14 +1628,26 @@ data_format = {
                     [0x0004] = { typ = "cardinal", name = "Zählerstand ungewollte Vorbeifahrt", },
                   },
                 },
+                [0x000C] = {
+                  name = "System SCMT - Einstellungen und Interaktionen",
+                  attributes = {
+                    [0x0001] = { typ = "byte", name = "Pneumatische Platte", enum = {
+                      [0] = "abgeschaltet",
+                      [1] = "eingeschaltet",
+                    }},
+                  },
+                },
+                [0x000D] = {
+                  name = "System SCMT - Betriebsdaten",
+                },
               },
             },
             [0x0066] = {
               name = "Status Türsystem",
               attributes = {
                 [0x0001] = { typ = "string", name = "Bezeichnung des Systems als Text", },
-                [0x0002] = { typ = "byte", name = "Status linke Seite", enum = tueren_status, },
-                [0x0003] = { typ = "byte", name = "Status rechte Seite", enum = tueren_status, },
+                [0x0002] = { typ = "byte", name = "Status linke Seite", enum = tuerzustand, },
+                [0x0003] = { typ = "byte", name = "Status rechte Seite", enum = tuerzustand, },
                 [0x0004] = { typ = "byte", name = "Traktionssperre", enum = {
                   [1] = "Traktionssperre aktiv",
                 }},
@@ -1593,18 +1659,18 @@ data_format = {
                 }},
                 [0x0006] = { typ = "byte", name = "Melder links", enum = aus_an, },
                 [0x0007] = { typ = "byte", name = "Melder rechts", enum = aus_an, },
-                [0x0008] = { typ = "byte", name = "Melder links", enum = aus_an_blinkend_invers },
-                [0x0009] = { typ = "byte", name = "Melder rechts", enum = aus_an_blinkend_invers },
+                [0x0008] = { typ = "byte", name = "Melder links", enum = aus_an_blinkend },
+                [0x0009] = { typ = "byte", name = "Melder rechts", enum = aus_an_blinkend },
                 [0x000A] = { typ = "byte", name = "Melder „(Zwangs)schließen“", enum = aus_an, },
-                [0x000B] = { typ = "byte", name = "Status Melder „(Zwangs)schließen“", enum = aus_an_blinkend_invers },
+                [0x000B] = { typ = "byte", name = "Status Melder „(Zwangs)schließen“", enum = aus_an_blinkend },
                 [0x000C] = { typ = "byte", name = "Melder „Türen links+rechts“", enum = aus_an, },
-                [0x000D] = { typ = "byte", name = "Status Melder „Türen links+rechts“", enum = aus_an_blinkend_invers },
+                [0x000D] = { typ = "byte", name = "Status Melder „Türen links+rechts“", enum = aus_an_blinkend },
                 [0x000E] = { typ = "byte", name = "Melder „Zentrales Öffnen links“", enum = aus_an, },
                 [0x000F] = { typ = "byte", name = "Melder „Zentrales Öffnen rechts“", enum = aus_an, },
-                [0x0010] = { typ = "byte", name = "Status Melder „Zentrales Öffnen links“", enum = aus_an_blinkend_invers, },
-                [0x0011] = { typ = "byte", name = "Status Melder „Zentrales Öffnen rechts“", enum = aus_an_blinkend_invers, },
+                [0x0010] = { typ = "byte", name = "Status Melder „Zentrales Öffnen links“", enum = aus_an_blinkend, },
+                [0x0011] = { typ = "byte", name = "Status Melder „Zentrales Öffnen rechts“", enum = aus_an_blinkend, },
                 [0x0012] = { typ = "byte", name = "Melder „Grünschleife“", enum = aus_an, },
-                [0x0013] = { typ = "byte", name = "Status Melder „TAV/Grünschleife“", enum = aus_an_blinkend_invers, },
+                [0x0013] = { typ = "byte", name = "Status Melder „TAV/Grünschleife“", enum = aus_an_blinkend, },
                 [0x0014] = { typ = "byte", name = "Türzustand", enum = {
                   [0] = "Alle Türen zu",
                   [1] = "Mindestens eine Tür ist offen",
@@ -1620,13 +1686,7 @@ data_format = {
                   [2] = "Dynamische Bremse",
                   [3] = "Traktionssperre",
                 }},
-                [0x0002] = { typ = "word", name = "Grund Traktionssperre", enum = {
-                  [0] = "Nichts",
-                  [1] = "Federspeicherbremse aktiv",
-                  [2] = "Türsystem",
-                  [3] = "Bremsprobe läuft",
-                  [4] = "Sifa ausgeschaltet",
-                }},
+                [0x0002] = { typ = "word", name = "Erste wirksame Traktionssperre", enum = traktionssperre, },
                 [0x0003] = { typ = "byte", name = "Status Fahrschalter", enum = {
                   [1] = "Deaktiviert",
                   [2] = "Normalzustand",
@@ -1654,7 +1714,46 @@ data_format = {
                   [0] = "Aus",
                   [1] = "Arbeitet",
                 }},
+                [0x000C] = { typ = "byte", name = "Spitzenlicht-Zustand", enum = {
+                  [0] = "An",
+                  [1] = "Aus",
+                  [2] = "An+Fernlicht",
+                  [3] = "An+Fernlicht hell",
+                }},
+                [0x000D] = { typ = "byte", name = "Sanden unter Vorgabegeschwindigkeit", enum = boolean, },
+                [0x000E] = { typ = "byte", name = "Sander im Testmodus", enum = boolean, },
+                [0x000F] = { typ = "byte", name = "Sander im Automatikmodus", enum = boolean, },
               },
+              nodes = {
+                [0x000B] = {
+                  name = "Störungsmeldungen",
+                  nodes = {
+                    [0x0001] = {
+                      name = "Störungsmeldung",
+                      attributes = {
+                        [0x0001] = { typ = "cardinal", name = "Laufende Nummer", },
+                        [0x0002] = { typ = "byte", name = "Priorität", enum = {
+                          [0] = "hoch",
+                          [1] = "mittel",
+                          [2] = "niedrig",
+                          [3] = "niedrig ohne akustische Ausgabe",
+                        }},
+                        [0x0003] = { typ = "string", name = "Text", },
+                        [0x0004] = { typ = "word", name = "Meldungstyp (Zusi-intern)", },
+                        [0x0005] = { typ = "byte", name = "Quittiert", enum = boolean },
+                        [0x0006] = { typ = "double", name = "Zeitpunkt", },
+                        [0x0007] = { typ = "string", name = "Client-intern", },
+                      },
+                    },
+                  },
+                },
+                [0x0010] = {
+                  name = "Traktionssperre",
+                  attributes = {
+                    [0x0001] = { typ = "word", name = "Grund", enum = traktionssperre, },
+                  }
+                },
+              }
             },
             [0x008E] = {
               name = "Status Zug",
@@ -1663,7 +1762,7 @@ data_format = {
                   [0] = "Güterzug",
                   [1] = "Reisezug",
                 }},
-                [0x0003] = { typ = "word", name = "Bremsstellung des Zuges", enum = bremsstellung, },
+                [0x0003] = { typ = "word", name = "Bremsstellung Zug", enum = bremsstellung, },
               },
               nodes = {
                 [0x0001] = {
@@ -1676,7 +1775,7 @@ data_format = {
                       },
                     },
                     [0x001B] = {
-                      name = "Vorhandene Bremsstellung/Lastwechsel",
+                      name = "Im Fahrzeug vorhandene Bremsstellung",
                       attributes = {
                         [0x0001] = { typ = "byte", name = "Bremsstellung", enum = bremsstellung },
                         [0x0002] = { typ = "single", name = "Zugehörige Bremsmasse", },
@@ -1704,7 +1803,8 @@ data_format = {
                         }},
                         [0x0002] = { typ = "byte", name = "Stromtyp", enum = stromsystem, },
                         [0x0003] = { typ = "byte", name = "Aktiv", enum = boolean, },
-                        [0x0004] = { typ = "single", name = "Max. Kraft [N]", },
+                        [0x0004] = { typ = "single", name = "Max. Kraft [N]" },
+                        [0x0005] = { typ = "byte", name = "Antrieb gesperrt", enum = boolean, },
                       },
                     },
                     [0x0026] = {
@@ -1759,7 +1859,7 @@ data_format = {
                       [5] = "Matrossow-Bremse",
                       [6] = "Scheibenbremse mit Symbol für „ausgeschaltet“",
                     }},
-                    [0x0015] = { typ = "single", name = "Bremsmasse Hand-/Feststellbremse", },
+                    [0x0015] = { typ = "single", name = "Bremsmasse Feststellbremse", },
                     [0x0016] = { typ = "single", name = "Aktive Bremsmasse", },
                     [0x0017] = { typ = "single", name = "Aktive Bremsmasse inkl. dyn. Bremsen", },
                     [0x0018] = { typ = "word", name = "Anzahl Achsen", },
@@ -1776,11 +1876,11 @@ data_format = {
                       [2] = "Luftabsperrhähne vorne/hinten",
                     }},
                     [0x001C] = { typ = "string", name = "Bezeichnung der Bremsbauart", },
-                    [0x001D] = { typ = "data", name = "Seitenansicht des Fahrzeugs", },
+                    [0x001D] = { typ = "data", name = "Seitenansicht des Fahrzeugs [png]", },
                     [0x001E] = { typ = "byte", name = "Hauptluftbehälterleitung vorhanden", enum = boolean, },
                     [0x001F] = { typ = "byte", name = "Fahrzeugverbund", enum = {
                       [0] = "Fahrzeug ist eigenständig",
-                      [1] = "Fahrzeugteil ohne Fahrzeugstatus",
+                      [1] = "Fahrzeugteil ohne eigenen Fahrzeugstatus",
                     }},
                     [0x0020] = { typ = "byte", name = "Lokstatus", enum = {
                       [0] = "Status unbekannt",
@@ -1794,41 +1894,40 @@ data_format = {
                       [1] = "Drehtaster",
                     }},
                     [0x0027] = { typ = "byte", name = "Automatisch lastabhängige Bremse", enum = boolean, },
-                    [0x0028] = { typ = "byte", name = "Direkte Bremse 1 abgesperrt", enum = boolean, },
-                    [0x0029] = { typ = "byte", name = "Direkte Bremse 2 abgesperrt", enum = boolean, },
-                    [0x002A] = { typ = "byte", name = "Indirekte Bremse 1 abgesperrt", enum = boolean, },
-                    [0x002B] = { typ = "byte", name = "Indirekte Bremse 2 abgesperrt", enum = boolean, },
-                    [0x002C] = { typ = "byte", name = "Federspeicherbremse 1 abgesperrt", enum = boolean, },
-                    [0x002D] = { typ = "byte", name = "Federspeicherbremse 2 abgesperrt", enum = boolean, },
-                    [0x002E] = { typ = "byte", name = "Absperrung direkte Bremse", enum = bremse_absperrung, },
-                    [0x002F] = { typ = "byte", name = "Absperrung indirekte Bremse", enum = bremse_absperrung, },
-                    [0x0030] = { typ = "byte", name = "Absperrung Federspeicherbremse", enum = bremse_absperrung, },
+                    [0x0028] = { typ = "byte", name = "Direkte Bremse 1", enum = normalzustand_abgesperrt, },
+                    [0x0029] = { typ = "byte", name = "Direkte Bremse 2", enum = normalzustand_abgesperrt, },
+                    [0x002A] = { typ = "byte", name = "Indirekte Bremse 1", enum = normalzustand_abgesperrt, },
+                    [0x002B] = { typ = "byte", name = "Indirekte Bremse 2", enum = normalzustand_abgesperrt, },
+                    [0x002C] = { typ = "byte", name = "Federspeicherbremse 1", enum = normalzustand_abgesperrt, },
+                    [0x002D] = { typ = "byte", name = "Federspeicherbremse 2", enum = normalzustand_abgesperrt, },
+                    [0x002E] = { typ = "byte", name = "Absperrung direkte Bremse", enum = absperrung_bremse, },
+                    [0x002F] = { typ = "byte", name = "Absperrung indirekte Bremse", enum = absperrung_bremse, },
+                    [0x0030] = { typ = "byte", name = "Absperrung Federspeicherbremse", enum = absperrung_bremse, },
                     [0x0031] = { typ = "byte", name = "Schalter Pultaktivierung", enum = {
                       [0] = "Keine Darstellung",
                       [1] = "Leuchtdrucktaster",
-                      [2] = "Mit Batteriehauptschalter kombininiert",
+                      [2] = "Mit Batteriehauptschalter kombiniert",
                     }},
                     [0x0032] = { typ = "byte", name = "Schalter Bremsprobe", enum = {
                       [0] = "Keine Darstellung",
                       [1] = "Drucktaster",
-                     }},
+                    }},
                     [0x0033] = { typ = "word", name = "Batteriespannung [V]", },
                     [0x0034] = { typ = "byte", name = "Batteriespannungsanzeige", enum = {
                       [0] = "Keine Darstellung",
                       [1] = "Quadratisch",
                       [2] = "Rund",
                     }},
-                    [0x0035] = { typ = "word", name = "Stellung Türsystemwahlschalter", enum = {
-                      [0] = "aus",
-                      -- Sonst von 1 beginnend die laufenden Nummer des Türsystems
+                    [0x0035] = { typ = "word", name = "Türsystemwahlschalter: Nummer aktives Türsystem", enum = {
+                      [0] = "Aus",
                     }},
-                    [0x0036] = { typ = "single", name = "Bremskraft Hand-/Feststellbremse", },
+                    [0x0036] = { typ = "single", name = "Bremskraft Feststellbremse", },
                     [0x0037] = { typ = "int", name = "Haupt-ID der Fahrzeugvariante", },
                     [0x0038] = { typ = "int", name = "Neben-ID der Fahrzeugvariante", },
                     [0x0039] = { typ = "string", name = "Name Führerstandsdatei", },
-                    [0x003A] = { typ = "byte", name = "Bodenbedienbare Handbremse", enum = boolean, },
+                    [0x003A] = { typ = "byte", name = "Bodenbedienbare Handbremse", enum = boolean },
                     [0x003B] = { typ = "single", name = "Umstellgewicht für Lastwechsel", },
-                    [0x003C] = { typ = "byte", name = "Bauart Lösezug", enum = {
+                    [0x003C] = { typ = "byte", name = "Lösezugbauart", enum = {
                       [0] = "Automatisch wirkend",
                       [1] = "Manueller Lösezug",
                       [2] = "Drucktaster",
@@ -1837,6 +1936,21 @@ data_format = {
                       [1] = "leer",
                       [2] = "beladen",
                     }},
+                    [0x003E] = { typ = "byte", name = "Zustand Schalter Nachbremsung", enum = {
+                      [1] = "aus - Fahrzeug hat Schalter",
+                      [2] = "nachbremsen - Fahrzeug hat Schalter",
+                      [3] = "aus - per Display einzustellen",
+                      [4] = "nachbremsen - per Display einzustellen",
+                    }},
+                    [0x003F] = { typ = "single", name = "Maximale Zuladung", },
+                    [0x0040] = { typ = "byte", name = "Hauptschaltersperrung", enum = {
+                      [1] = "Hauptschalter gesperrt",
+                      [2] = "Hauptschalter nicht gesperrt",
+                    }},
+                    [0x0041] = { typ = "byte", name = "Luftfederabsperrhähne [bitweise kodiert, 1=abgesperrt]", },
+                    [0x0042] = { typ = "byte", name = "Anzahl Luftfederabsperrhähne", },
+                    [0x0043] = { typ = "byte", name = "Anzahl Türen", },
+                    [0x0044] = { typ = "single", name = "Max. Bremsgewicht lastabhängige Bremse", },
                   },
                 },
               },
@@ -1864,14 +1978,20 @@ data_format = {
                       [12] = "UT",
                       [13] = "ZLB",
                       [14] = "Wärterhaltscheibe",
+                      [15] = "Wegverzweigung rechts",
+                      [16] = "Wegverzweigung links",
+                      [17] = "HET mit Blinklicht",
+                      [18] = "ET",
+                      [19] = "AT",
                     }},
                     [0x0003] = { typ = "int", name = "Typ", enum = {
                       [0] = "undefiniert",
                       [1] = "Ohne Grundstellung",
-                      [2] = "Grundstellung rechts (weiß)",
-                      [3] = "Grundstellung links (weiß)",
-                      [4] = "Grundstellung rechts (gelb)",
-                      [5] = "Grundstellung links (gelb)",
+                      [2] = "Grundstellung rechts (weiß/schwarz)",
+                      [3] = "Grundstellung links (weiß/schwarz)",
+                      [4] = "Grundstellung rechts (gelb/schwarz)",
+                      [5] = "Grundstellung links (gelb/schwarz)",
+                      [6] = "Elektroantrieb (weiß)",
                     }},
                     [0x0004] = { typ = "byte", name = "Aktuelle Lage", enum = {
                       [0] = "Zusi-Grundstellung spitz befahren",
@@ -1889,9 +2009,9 @@ data_format = {
                       [1] = "Weiche läuft automatisch um",
                       [2] = "Weiche muss gestellt werden",
                     }},
-                  }
-                }
-              }
+                  },
+                },
+              },
             },
             [0x00A9] = {
               name = "Status Leuchtmelder für ZusiDisplay",
@@ -1905,11 +2025,11 @@ data_format = {
                       [1] = "Grafik inkl. Tastenrahmen übertragen",
                       [2] = "Grafik inkl. Tasten übertragen",
                     }},
-                    [0x0003] = { typ = "word", name = "Breite der Meldergrafik [px]", },
-                    [0x0004] = { typ = "word", name = "Höhe der Meldergrafik [px]", },
-                  }
-                }
-              }
+                    [0x0003] = { typ = "word", name = "Breite der Meldergrafik [Pixel]", },
+                    [0x0004] = { typ = "word", name = "Höhe der Meldergrafik [Pixel]", },
+                  },
+                },
+              },
             },
             [0x00AB] = {
               name = "Status Zug-Fahrdaten",
@@ -1939,9 +2059,23 @@ data_format = {
                       attributes = {
                         [0x0001] = { typ = "word", name = "Laufende Nummer des Systems", },
                         [0x0002] = { typ = "single", name = "Bremskraft [N]", },
-                        [0x0005] = { typ = "single", name = "Soll-Bremskraft [N]", },
+                        [0x0005] = { typ = "single", name = "Sollbremskraft [N]", },
                         [0x0006] = { typ = "word", name = "Anzahl gebremste Achsen", },
                         [0x0007] = { typ = "single", name = "Oberstrom [A]", },
+                      },
+                    },
+                    [0x0015] = {
+                      name = "Türen",
+                      attributes = {
+                        [0x0001] = { typ = "byte", name = "Türzustand rechts Tür A", enum = tuerzustand, },
+                        [0x0002] = { typ = "byte", name = "Türzustand rechts Tür B", enum = tuerzustand, },
+                        [0x0003] = { typ = "byte", name = "Türzustand rechts Tür C", enum = tuerzustand, },
+                        [0x0004] = { typ = "byte", name = "Türzustand rechts Tür D", enum = tuerzustand, },
+                        [0x0005] = { typ = "byte", name = "Türzustand links Tür A", enum = tuerzustand, },
+                        [0x0006] = { typ = "byte", name = "Türzustand links Tür B", enum = tuerzustand, },
+                        [0x0007] = { typ = "byte", name = "Türzustand links Tür C", enum = tuerzustand, },
+                        [0x0008] = { typ = "byte", name = "Türzustand links Tür D", enum = tuerzustand, },
+                        [0x0009] = { typ = "byte", name = "Tür abgesperrt [bitweise kodiert]", },
                       },
                     },
                   },
@@ -1961,7 +2095,7 @@ data_format = {
                       [2] = "Magnet oben und bestromt",
                       [3] = "Magnet unten und bestromt",
                     }},
-                    [0x000F] = { typ = "byte", name = "Zustand Feststell-/Handbremse", enum = {
+                    [0x000F] = { typ = "byte", name = "Zustand Feststellbremse", enum = {
                       [1] = "Bremse gelöst",
                       [2] = "Bremse angelegt",
                     }},
@@ -1971,10 +2105,15 @@ data_format = {
                       [2] = "Magnet wird bestromt",
                       [4] = "Magnet hebt",
                     }},
+                    [0x0010] = { typ = "byte", name = "Zustand Mg-Bremsen-Manipulation [bitweise kodiert]", },
                     [0x0011] = { typ = "single", name = "Bremskraft Druckluftbremse [N]", },
-                  }
-                }
-              }
+                    [0x0012] = { typ = "smallint", name = "Oberstrombegrenzung [A]", },
+                    [0x0013] = { typ = "byte", name = "Fahrzeug regelt Oberstrombegrenzung  automatisch", enum = boolean, },
+                    [0x0014] = { typ = "byte", name = "Stromabnehmerstellung [bitweise kodiert]", },
+                    [0x0016] = { typ = "byte", name = "Hauptschalter aus", enum = boolean },
+                  },
+                },
+              },
             },
             [0x00B4] = {
               name = "Status Signale",
@@ -1982,12 +2121,12 @@ data_format = {
                 [0x0001] = {
                   name = "Nächstes Hauptsignal",
                   attributes = {
-                    [0x0001] = { typ = "single", name = "Abstand [m]" },
-                    [0x0002] = { typ = "single", name = "Zulässige Geschwindigkeit [m/s]" },
-                  }
-                }
-              }
-            }
+                    [0x0001] = { typ = "single", name = "Abstand [m]", },
+                    [0x0002] = { typ = "single", name = "Zulässige Geschwindigkeit [m/s]", },
+                  },
+                },
+              },
+            },
           },
         },
         [0x000B] = {
@@ -2045,13 +2184,14 @@ data_format = {
             }},
             [0x0004] = { typ = "string", name = "Transfer der Buchfahrplan-Rohdatei (xml)", },
             [0x0005] = { typ = "byte", name = "Zug wurde neu übernommen", enum = boolean, },
-            [0x0006] = { typ = "data", name = "Transfer der Buchfahrplan-Bilddatei", },
+            [0x0006] = { typ = "data", name = "Transfer des Buchfahrplans (Bilddatei)", },
             [0x0007] = { typ = "data", name = "Transfer des Buchfahrplans (pdf)", },
             [0x0008] = { typ = "data", name = "Transfer des Bremszettels (pdf)", },
             [0x0009] = { typ = "data", name = "Transfer der Wagenliste (pdf)", },
             [0x000A] = { typ = "data", name = "Transfer der La (pdf)", },
             [0x000B] = { typ = "data", name = "Transfer des Streckenbuchs (pdf)", },
             [0x000C] = { typ = "data", name = "Transfer der Ersatzfahrpläne (pdf)", },
+            [0x000D] = { typ = "data", name = "Transfer Fahrplaninfo-Datei", },
           },
         },
         [0x010A] = {
@@ -2157,30 +2297,49 @@ data_format = {
               }
             },
             [0x000B] = {
-              name = "Stromabnehmerwahl",
+              name = "Antriebe/Stromabnehmerwahl/Hauptschalter",
               attributes = {
-                [0x0001] = { typ = "word", name = "Index des Fahrzeugs im Zugverband", },
-                [0x0002] = { typ = "byte", name = "Stromabnehmerwahl bitweise codiert", },
-                [0x0003] = { typ = "byte", name = "Stromabnehmer-Absperrhähne bitweise codiert", },
+                [0x0001] = { typ = "word", name = "Index des Fahrzeuges im Zugverband", },
+                [0x0002] = { typ = "byte", name = "Stromabnehmerwahl [bitweise kodiert]", },
+                [0x0003] = { typ = "byte", name = "Hauptschalter sperren", enum = {
+                  [1] = "Hauptschalter gesperrt",
+                  [2] = "Hauptschalter entsperrt",
+                }},
+                [0x0004] = { typ = "byte", name = "Antrieb Nr. sperren", },
+                [0x0005] = { typ = "byte", name = "Antrieb Nr. entsperren", },
               }
             },
             [0x000C] = {
-              name = "Bremsstellung setzen",
+              name = "Bremse und Umgebung",
               attributes = {
-                [0x0001] = { typ = "word", name = "Index des Fahrzeugs im Zugverband", },
-                [0x0002] = { typ = "byte", name = "Bremsstellung", enum = bremsstellung },
+                [0x0001] = { typ = "word", name = "Index des Fahrzeuges im Zugverband", },
+                [0x0002] = { typ = "byte", name = "Bremsstellung", enum = bremsstellung, },
                 [0x0003] = { typ = "byte", name = "Indirekte Bremse abziehen", enum = {
-                  [0] = "Indirekte Bremse abziehen beendet",
-                  [1] = "Indirekte Bremse abziehen",
+                  [0] = "Abziehen beendet",
+                  [1] = "Abziehen",
                 }},
-                [0x0004] = { typ = "byte", name = "Absperrhähne Hauptluftleitung setzen", enum = absperrhaehne_status, },
-                [0x0005] = { typ = "byte", name = "Direkte Bremse 1 setzen", enum = bremse_zustand },
-                [0x0006] = { typ = "byte", name = "Direkte Bremse 2 setzen", enum = bremse_zustand },
-                [0x0007] = { typ = "byte", name = "Indirekte Bremse 1 setzen", enum = bremse_zustand },
-                [0x0008] = { typ = "byte", name = "Indirekte Bremse 2 setzen", enum = bremse_zustand },
-                [0x0009] = { typ = "byte", name = "Federspeicherbremse 1 setzen", enum = bremse_zustand },
-                [0x000A] = { typ = "byte", name = "Federspeicherbremse 2 setzen", enum = bremse_zustand },
-                [0x000B] = { typ = "byte", name = "Absperrhähne Hauptluftbehälterleitung setzen", enum = absperrhaehne_status, },
+                [0x0004] = { typ = "byte", name = "Absperrhähne Hauptluftleitung setzen", enum = {
+                  [0] = "Nur an den Zugenden geschlossen",
+                  [1] = "Hahn vorne geöffnet",
+                  [2] = "Hahn hinten geöffnet",
+                  [3] = "Beide Hähne geöffnet",
+                  [4] = "Beide Hähne zu",
+                  [5] = "Auf Default setzen",
+                }},
+                [0x0005] = { typ = "byte", name = "Direkte Bremse 1 setzen", enum = normalzustand_abgesperrt, },
+                [0x0006] = { typ = "byte", name = "Direkte Bremse 2 setzen", enum = normalzustand_abgesperrt, },
+                [0x0007] = { typ = "byte", name = "Indirekte Bremse 1 setzen", enum = normalzustand_abgesperrt, },
+                [0x0008] = { typ = "byte", name = "Indirekte Bremse 2 setzen", enum = normalzustand_abgesperrt, },
+                [0x0009] = { typ = "byte", name = "Federspeicherbremse 1 setzen", enum = normalzustand_abgesperrt, },
+                [0x000A] = { typ = "byte", name = "Federspeicherbremse 2 setzen", enum = normalzustand_abgesperrt, },
+                [0x000B] = { typ = "byte", name = "Absperrhähne Hauptluftbehälterleitung setzen", enum = {
+                  [0] = "Nur an den Zugenden geschlossen",
+                  [1] = "Hahn vorne geöffnet",
+                  [2] = "Hahn hinten geöffnet",
+                  [3] = "Beide Hähne geöffnet",
+                  [4] = "Beide Hähne zu",
+                  [5] = "Auf Default setzen",
+                }},
                 [0x000C] = { typ = "byte", name = "Mg-Bremse setzen", enum = {
                     [1] = "Prüfung starten",
                     [2] = "Prüfung beenden",
@@ -2190,11 +2349,38 @@ data_format = {
                     [2] = "anlegen",
                 }},
                 [0x000E] = { typ = "byte", name = "Lastwechsel setzen", enum = {
-                    [0] = "automatisch",
-                    [1] = "leer",
-                    [2] = "beladen",
+                  [0] = "automatisch",
+                  [1] = "leer",
+                  [2] = "beladen",
                 }},
+                [0x000F] = { typ = "byte", name = "Nachbremsung setzen", enum = {
+                  [1] = "aus",
+                  [2] = "an",
+                }},
+                [0x0010] = { typ = "byte", name = "Luftfederabsperrhähne setzen [bitweise kodiert, 1=abgesperrt]", },
+                [0x0011] = { typ = "byte", name = "Dynamische Bremse Nr. sperren", },
+                [0x0012] = { typ = "byte", name = "Dynamische Bremse Nr. entsperren", },
               }
+            },
+            [0x001A] = {
+              name = "Störungsmeldung",
+              attributes = {
+                [0x0001] = { typ = "byte", name = "Priorität", },
+                [0x0002] = { typ = "string", name = "Text der Meldung", },
+                [0x0003] = { typ = "word", name = "Kennung", },
+                [0x0004] = { typ = "string", name = "Client-Intern", },
+              },
+            },
+            [0x001E] = {
+              name = "Weitere Fahrzeugsysteme",
+              attributes = {
+                [0x0001] = { typ = "word", name = "Index Fahrzeug im Zugverband", },
+                [0x0002] = { typ = "byte", name = "Zustand Türabsperrung [bitweise kodiert]", },
+                [0x0003] = { typ = "byte", name = "Prüfmodus Sander", enum = {
+                  [0] = "Prüfmodus",
+                  [1] = "Normalbetrieb",
+                }},
+              },
             },
           },
           attributes = {
@@ -2203,14 +2389,19 @@ data_format = {
             [0x000F] = { typ = "data", name = "Transfer der La (pdf)", },
             [0x0010] = { typ = "data", name = "Transfer des Streckenbuchs (pdf)", },
             [0x0011] = { typ = "data", name = "Transfer der Ersatzfahrpläne (pdf)", },
-            [0x0012] = { typ = "word", name = "Index des einzustellenden Türsystems (0=kein Türsystem)", },
-            [0x0013] = { typ = "byte", name = "Index des zu deaktivierenden Antriebs", },
-            [0x0014] = { typ = "byte", name = "Index des zu aktivierenden Antriebs", },
-            [0x0015] = { typ = "byte", name = "Index des zu deaktivierenden dynamischen Bremssystems", },
-            [0x0016] = { typ = "byte", name = "Index des zu aktivierenden dynamischen Bremssystems", },
-            [0x0017] = { typ = "byte", name = "Index des zu deaktivierenden Zugbeeinflussungssystems", },
-            [0x0018] = { typ = "byte", name = "Index des zu aktivierenden Zugbeeinflussungssystems", },
-            [0x0019] = { typ = "single", name = "Bremshundertstel setzen", },
+            [0x0012] = { typ = "smallint", name = "Index des vorzuwählenden Türsystems", enum = {
+              [0] = "aus",
+            }},
+            [0x0013] = { typ = "smallint", name = "Index des zu deaktivierenden Antriebs", },
+            [0x0014] = { typ = "smallint", name = "Index des zu aktivierenden Antriebs", },
+            [0x0015] = { typ = "smallint", name = "Index des zu deaktivierenden dynamischen Bremssystems", },
+            [0x0016] = { typ = "smallint", name = "Index des zu aktivierenden dynamischen Bremssystems", },
+            [0x0017] = { typ = "smallint", name = "Index des zu deaktivierenden Zugbeeinflussungssystems", },
+            [0x0018] = { typ = "smallint", name = "Index des zu aktivierenden Zugbeeinflussungssystems", },
+            [0x0019] = { typ = "single", name = "Brh setzen", },
+            [0x001B] = { typ = "cardinal", name = "Störungsmeldung Nr. quittieren", },
+            [0x001C] = { typ = "cardinal", name = "Störungsmeldung Nr. beenden", },
+            [0x001D] = { typ = "smallint", name = "Oberstrombegrenzung setzen", },
           },
         },
         [0x010B] = {
@@ -2275,10 +2466,10 @@ data_format = {
               name = "Führerstands-Blickpunkt auf Standard",
             },
             [0x000E] = {
-              name = "Fahrzeugbilder",
+              name = "Fahrzeugbilder anfordern",
               attributes = {
-                [0x0001] = { typ = "word", name = "Bildhöhe [px]", },
-                [0x0002] = { typ = "byte", name = "Seite des Zuges", enum = {
+                [0x0001] = { typ = "word", name = "Bildhöhe [Pixel]", },
+                [0x0002] = { typ = "byte", name = "Seite", enum = {
                   [0] = "In Fahrtrichtung linke Seite",
                   [1] = "In Fahrtrichtung rechte Seite",
                 }},
@@ -2433,3 +2624,4 @@ end
 local tcp_dissector_table = DissectorTable.get("tcp.port")
 dissector = tcp_dissector_table:get_dissector(1436)
 tcp_dissector_table:add(1436, zusi3_proto)
+
